@@ -1,0 +1,13 @@
+server:
+  address:     ":8000"
+  openapiPath: "/api.json"
+  swaggerPath: "/swagger"
+
+logger:
+  level : "all"
+  stdout: true
+
+# 模板引擎配置
+viewer:
+  indexLayout:     "index/index.html"
+  searchLayout:    "index/api/search.html"

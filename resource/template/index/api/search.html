@@ -1,0 +1,54 @@
+<style>
+
+</style>
+<!--- main --->
+<div class="row gf-list"  >
+    <div>
+        <ul class="list-group">
+            <h3>{{.Data.Details.register}}</h3>
+        </ul>
+        <ul class="list-group">
+            <h1>{{$.Data.Details.domain}}</h1>
+        </ul>
+    </div>
+
+        <div>
+        <h3>NAME DERAILS</h3>
+
+        {{if .Data.Details.register}}
+            <div class="col-md-9">
+                <ul class="list-group">
+                    ADDRESSES:&nbsp;&nbsp;&nbsp;{{.Data.Details.exptime}}
+                </ul>
+                <ul class="list-group">
+                    RESOLVER:&nbsp;&nbsp;&nbsp;{{.Data.Details.resoleradd}}
+                </ul>
+                <ul class="list-group">
+                    ADDRESSES:&nbsp;&nbsp;&nbsp;{{.Data.Details.adder}}
+                </ul>
+                <ul class="list-group">
+                    CONTENT HASH:&nbsp;&nbsp;&nbsp;{{.Data.Details.contenthash}}
+                </ul>
+                <ul class="list-group">
+                    TEXT RECORD snapshot:&nbsp;&nbsp;&nbsp;{{.Data.Details.snapshot_}}
+                </ul>
+                <ul class="list-group">
+                    TEXT RECORD url:&nbsp;&nbsp;&nbsp;{{.Data.Details.url}}
+                </ul>
+            </div>
+        {{else}}
+            <div>
+                <h3>{{.Data.Details.isnotregister}}:available&nbsp;&nbsp;&nbsp;<a href="https://app.ens.domains/search/{{.Data.Details.isnotregister}}/register">Register Now</a></h3>
+            </div>
+        {{end}}
+        <div>
+            <h3>OWNER'S ENS NAMES ({{.Data.Total}})</h3>
+            {{range $index, $name := .Data.NameList}}
+                <ul class="list-group">
+                    {{$name}} <a href="/api/search?key={{$name}}">More</a>
+                </ul>
+            {{end}}
+        </div>
+
+    </div>
+</div>
